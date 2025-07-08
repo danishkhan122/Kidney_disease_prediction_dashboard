@@ -61,14 +61,40 @@ def simulate_forecast_images(image_np, tumor_boxes, scale_factor, color):
 
 # ------------------- Image Analysis -------------------
 def analyze_image(img_pil):
-    model = YOLO("runs/detect/kidne_model3/weights/best.pt")
+    model = YOLO("C:/Kidney_disease/runs/detect/kidne_model3/weights/best.pt")
     img_np = np.array(img_pil.convert("RGB"))
     annotated = img_np.copy()
     results = model(img_np)[0]
-
-    boxes = results.boxes.xyxy.cpu().numpy()
-    class_ids = results.boxes.cls.cpu().numpy().astype(int)
     names = model.names
+
+    # Raw YOLO output
+    all_boxes = results.boxes.xyxy.cpu().numpy()
+    all_class_ids = results.boxes.cls.cpu().numpy().astype(int)
+    all_confs = results.boxes.conf.cpu().numpy()
+
+    # ---------- Robust Filtering ----------
+    valid_labels = ["kidney", "tumor"]
+    confidence_threshold = 0.5
+    min_box_area = 2000  # pixels
+
+    filtered_boxes = []
+    filtered_class_ids = []
+
+    for box, cls_id, conf in zip(all_boxes, all_class_ids, all_confs):
+        label = names[cls_id].lower()
+        x1, y1, x2, y2 = box
+        box_area = (x2 - x1) * (y2 - y1)
+
+        if (
+            label in valid_labels and
+            conf >= confidence_threshold and
+            box_area >= min_box_area
+        ):
+            filtered_boxes.append(box)
+            filtered_class_ids.append(cls_id)
+
+    boxes = filtered_boxes
+    class_ids = filtered_class_ids
 
     kidneys, tumors = [], []
     stage_counts = [0, 0, 0]
