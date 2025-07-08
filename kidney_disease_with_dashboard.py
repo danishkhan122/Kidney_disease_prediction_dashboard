@@ -61,7 +61,7 @@ def simulate_forecast_images(image_np, tumor_boxes, scale_factor, color):
 
 # ------------------- Image Analysis -------------------
 def analyze_image(img_pil):
-    model = YOLO("C:/Kidney_disease/runs/detect/kidne_model3/weights/best.pt")
+    model = YOLO("runs/detect/kidne_model3/weights/best.pt")
     img_np = np.array(img_pil.convert("RGB"))
     annotated = img_np.copy()
     results = model(img_np)[0]
