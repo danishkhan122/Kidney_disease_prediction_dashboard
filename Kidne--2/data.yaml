@@ -1,0 +1,13 @@
+names:
+- Kidney
+- Tumor
+nc: 2
+roboflow:
+  license: CC BY 4.0
+  project: kidne
+  url: https://universe.roboflow.com/phase-1/kidne/dataset/2
+  version: 2
+  workspace: phase-1
+test: ../test/images
+train: ../train/images
+val: ../valid/images

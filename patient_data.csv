@@ -1,0 +1,26 @@
+timestamp,stage_1,stage_2,stage_3,status
+2025-07-04 12:51:07,1,0,0,Tumor Detected
+2025-07-04 15:14:26,0,0,0,Normal
+2025-07-04 15:15:09,3,0,0,Tumor Detected
+2025-07-04 15:17:00,3,0,0,Tumor Detected
+2025-07-04 15:18:52,3,0,0,Tumor Detected
+2025-07-04 15:19:05,2,0,0,Tumor Detected
+2025-07-04 15:19:29,1,0,0,Tumor Detected
+2025-07-04 15:22:51,3,0,0,Tumor Detected
+2025-07-04 15:22:57,1,0,0,Tumor Detected
+2025-07-04 15:38:47,3,0,0,Tumor Detected
+2025-07-04 15:39:04,1,0,0,Tumor Detected
+2025-07-04 15:40:24,0,0,0,Normal
+2025-07-04 15:47:27,0,0,0,Normal
+2025-07-04 15:47:37,1,0,0,Tumor Detected
+2025-07-04 15:52:00,1,0,0,Tumor Detected
+2025-07-04 19:58:53,2,0,0,Tumor Detected
+2025-07-04 20:06:18,0,0,0,Normal
+2025-07-04 20:06:24,2,0,0,Tumor Detected
+2025-07-04 20:09:35,1,0,0,Tumor Detected
+2025-07-08 10:08:00,1,0,0,Tumor Detected
+2025-07-08 10:17:11,1,0,0,Tumor Detected
+2025-07-08 10:18:12,1,0,0,Tumor Detected
+2025-07-08 10:22:56,1,0,0,Tumor Detected
+2025-07-08 10:25:45,1,0,0,Tumor Detected
+2025-07-08 10:27:08,1,0,0,Tumor Detected
